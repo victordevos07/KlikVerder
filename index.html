@@ -1,309 +1,960 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KlikVerder – Digitale Veiligheid voor Senioren</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KlikVerder – Cybersecurity aan huis</title>
+
+<link rel="icon" type="image/svg+xml" href="logo_rond.svg">
+<link rel="alternate icon" type="image/png" href="favicon.png">
+
+
+<!-- SEO -->
+<meta name="description" content="KlikVerder helpt particulieren in Vlaanderen zich beschermen tegen online oplichting, phishing en fraude via persoonlijke begeleiding aan huis." />
+<meta name="keywords" content="cybersecurity, phishing, online veiligheid, fraude, oplichting, Vlaanderen, KlikVerder, senioren, beveiliging" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Victor Devos – KlikVerder" />
+<link rel="canonical" href="https://www.klikverder.be/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.klikverder.be/" />
+<meta property="og:title" content="KlikVerder – Cybersecurity aan huis" />
+<meta property="og:description" content="Persoonlijke cybersecurity begeleiding aan huis in Vlaanderen. Bescherm uzelf tegen phishing en online oplichting." />
+<meta property="og:locale" content="nl_BE" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"KlikVerder","description":"Cybersecurity begeleiding aan huis voor particulieren in Vlaanderen","telephone":"+32476548699","areaServed":"West-Vlaanderen, België","url":"https://www.klikverder.be"}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
 <style>
-  :root { --navy:#0f2044;--blue:#1a3a6e;--accent:#2e7df7;--light:#eef4ff;--white:#fff;--gray:#f4f6fb;--text:#1a1a2e;--muted:#5a6a8a;--green:#1db87a;--gold:#f5a623; }
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Segoe UI',sans-serif;color:var(--text);line-height:1.7;overflow-x:hidden}
-  nav{background:var(--navy);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3)}
-  .logo{font-size:1.4rem;font-weight:800;color:var(--white)}
-  .logo span{color:var(--accent)}
-  nav ul{list-style:none;display:flex;gap:32px}
-  nav ul li a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.95rem;font-weight:500;transition:color .2s}
-  nav ul li a:hover{color:var(--white)}
-  .nav-cta{background:var(--accent);color:var(--white)!important;padding:10px 22px;border-radius:8px;font-weight:600!important}
-  .hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 60%,#1e4fa8 100%);color:var(--white);padding:100px 40px 80px;text-align:center;position:relative;overflow:hidden}
-  .hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(46,125,247,.15) 0%,transparent 70%);border-radius:50%}
-  .hero-badge{display:inline-block;background:rgba(46,125,247,.2);border:1px solid rgba(46,125,247,.4);color:#7eb8ff;padding:6px 18px;border-radius:50px;font-size:.85rem;font-weight:600;letter-spacing:.5px;margin-bottom:28px;text-transform:uppercase}
-  .hero h1{font-size:3.4rem;font-weight:900;line-height:1.15;margin-bottom:24px;max-width:800px;margin-left:auto;margin-right:auto}
-  .hero h1 span{color:#7eb8ff}
-  .hero p{font-size:1.2rem;color:rgba(255,255,255,.78);max-width:600px;margin:0 auto 40px}
-  .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-  .btn-primary{background:var(--accent);color:var(--white);padding:16px 36px;border-radius:10px;font-size:1.05rem;font-weight:700;text-decoration:none;transition:all .2s;box-shadow:0 4px 20px rgba(46,125,247,.4);display:inline-block}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(46,125,247,.5)}
-  .btn-secondary{background:rgba(255,255,255,.1);color:var(--white);padding:16px 36px;border-radius:10px;font-size:1.05rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.25);transition:all .2s}
-  .btn-secondary:hover{background:rgba(255,255,255,.18)}
-  .hero-trust{margin-top:60px;display:flex;gap:40px;justify-content:center;flex-wrap:wrap}
-  .trust-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.7);font-size:.9rem}
-  .trust-icon{width:36px;height:36px;background:rgba(46,125,247,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem}
-  section{padding:90px 40px}
-  .container{max-width:1100px;margin:0 auto}
-  .section-label{font-size:.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-  .section-title{font-size:2.4rem;font-weight:800;line-height:1.2;margin-bottom:16px;color:var(--navy)}
-  .section-sub{font-size:1.1rem;color:var(--muted);max-width:600px;margin-bottom:56px}
-  .why{background:var(--gray)}
-  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
-  .why-card{background:var(--white);border-radius:16px;padding:36px 32px;border:1px solid #e0e8f8;transition:all .25s}
-  .why-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08);border-color:var(--accent)}
-  .why-icon{font-size:2.2rem;margin-bottom:18px}
-  .why-card h3{font-size:1.2rem;font-weight:700;margin-bottom:10px;color:var(--navy)}
-  .why-card p{color:var(--muted);font-size:.97rem}
-  .pricing{background:var(--white)}
-  .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;align-items:start}
-  .pricing-card{border-radius:20px;padding:40px 36px;border:2px solid #e0e8f8;position:relative;transition:all .25s}
-  .pricing-card:hover{box-shadow:0 16px 50px rgba(0,0,0,.1)}
-  .pricing-card.popular{border-color:var(--accent);background:var(--navy);color:var(--white);transform:scale(1.03);box-shadow:0 20px 60px rgba(15,32,68,.3)}
-  .popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:#7a4f00;font-size:.75rem;font-weight:800;padding:5px 18px;border-radius:50px;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
-  .pricing-tier{font-size:.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-  .pricing-card.popular .pricing-tier{color:#7eb8ff}
-  .pricing-name{font-size:1.5rem;font-weight:800;margin-bottom:6px;color:var(--navy)}
-  .pricing-card.popular .pricing-name{color:var(--white)}
-  .pricing-price{font-size:2.8rem;font-weight:900;color:var(--navy);line-height:1;margin:18px 0 6px}
-  .pricing-card.popular .pricing-price{color:var(--white)}
-  .pricing-period{font-size:.9rem;color:var(--muted);margin-bottom:28px}
-  .pricing-card.popular .pricing-period{color:rgba(255,255,255,.6)}
-  .pricing-features{list-style:none;margin-bottom:32px}
-  .pricing-features li{padding:8px 0;font-size:.97rem;display:flex;align-items:center;gap:10px;color:var(--text);border-bottom:1px solid #f0f4ff}
-  .pricing-card.popular .pricing-features li{color:rgba(255,255,255,.85);border-bottom-color:rgba(255,255,255,.1)}
-  .pricing-features li::before{content:'✓';color:var(--green);font-weight:800;font-size:.9rem;flex-shrink:0}
-  .pricing-card.popular .pricing-features li::before{color:#7eb8ff}
-  .btn-book{display:block;text-align:center;padding:14px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;background:var(--light);color:var(--navy);transition:all .2s}
-  .btn-book:hover{background:var(--accent);color:var(--white)}
-  .pricing-card.popular .btn-book{background:var(--accent);color:var(--white)}
-  .pricing-card.popular .btn-book:hover{background:#1a6ce0}
-  .how{background:var(--gray)}
-  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
-  .step{text-align:center;padding:36px 24px;background:var(--white);border-radius:16px;border:1px solid #e0e8f8}
-  .step-number{width:52px;height:52px;background:var(--accent);color:var(--white);border-radius:50%;font-size:1.3rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
-  .step h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:10px}
-  .step p{color:var(--muted);font-size:.95rem}
-  .testimonials{background:var(--white)}
-  .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-  .testimonial-card{background:var(--gray);border-radius:16px;padding:32px;border-left:4px solid var(--accent)}
-  .testimonial-stars{color:var(--gold);font-size:1.1rem;margin-bottom:14px}
-  .testimonial-text{font-size:1rem;color:var(--text);font-style:italic;margin-bottom:20px;line-height:1.8}
-  .testimonial-author{font-weight:700;color:var(--navy);font-size:.95rem}
-  .testimonial-role{color:var(--muted);font-size:.85rem}
-  .risks{background:linear-gradient(135deg,#fff8f0,#fff3e0)}
-  .risks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
-  .risk-card{background:var(--white);border-radius:12px;padding:28px;border-left:4px solid #ff6b35;box-shadow:0 2px 12px rgba(0,0,0,.05)}
-  .risk-icon{font-size:1.8rem;margin-bottom:12px}
-  .risk-card h4{font-weight:700;color:var(--navy);margin-bottom:8px}
-  .risk-card p{color:var(--muted);font-size:.93rem}
-  .cta-section{background:linear-gradient(135deg,var(--navy),#1a3a6e);color:var(--white);text-align:center;padding:100px 40px}
-  .cta-section h2{font-size:2.6rem;font-weight:900;margin-bottom:18px}
-  .cta-section p{font-size:1.15rem;color:rgba(255,255,255,.75);max-width:520px;margin:0 auto 40px}
-  footer{background:#08111f;color:rgba(255,255,255,.5);text-align:center;padding:32px 40px;font-size:.9rem}
-  footer strong{color:var(--white)}
-  .contact{background:var(--gray)}
-  .contact-form{max-width:600px;margin:0 auto;background:var(--white);border-radius:20px;padding:48px;box-shadow:0 4px 30px rgba(0,0,0,.07)}
-  .form-group{margin-bottom:22px}
-  .form-group label{display:block;font-weight:600;margin-bottom:8px;color:var(--navy);font-size:.95rem}
-  .form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 16px;border:2px solid #e0e8f8;border-radius:10px;font-size:1rem;font-family:inherit;color:var(--text);transition:border-color .2s;background:#fafcff;outline:none}
-  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent)}
-  .form-group textarea{min-height:110px;resize:vertical}
-  .form-submit{width:100%;padding:16px;background:var(--accent);color:var(--white);border:none;border-radius:10px;font-size:1.05rem;font-weight:700;cursor:pointer;transition:all .2s}
-  .form-submit:hover{background:#1a6ce0;transform:translateY(-1px)}
-  .group-cta{margin-top:56px;background:linear-gradient(135deg,var(--navy),#1a3a6e);border-radius:20px;padding:48px;color:var(--white);display:flex;align-items:center;gap:40px;flex-wrap:wrap}
-  .group-cta-emoji{font-size:3.5rem}
-  .group-cta-body{flex:1;min-width:250px}
-  .group-cta-label{font-size:.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7eb8ff;margin-bottom:8px}
-  .group-cta-body h3{font-size:1.6rem;font-weight:800;margin-bottom:12px}
-  .group-cta-body p{color:rgba(255,255,255,.75);font-size:1rem}
-  @media(max-width:768px){nav ul{display:none}.hero h1{font-size:2.2rem}section{padding:60px 20px}nav{padding:16px 20px}.pricing-card.popular{transform:scale(1)}}
+:root {
+  --navy:        #1B3A6B;
+  --navy-mid:    #4A6FA5;
+  --navy-light:  #C8D8EF;
+  --navy-pale:   #EBF2FB;
+  --blue:        #2563EB;
+  --blue-light:  #BFCFFA;
+  --blue-pale:   #EEF4FF;
+  --white:       #FFFFFF;
+  --off-white:   #F7F9FC;
+  --grey-100:    #F1F5F9;
+  --grey-200:    #E2E8F0;
+  --grey-400:    #94A3B8;
+  --grey-600:    #475569;
+  --grey-800:    #1E293B;
+  --font:        'Calibri', 'Lato', sans-serif;
+  --max:         1120px;
+  --r:           10px;
+  --shadow-xs:   0 1px 4px rgba(27,58,107,.07);
+  --shadow-sm:   0 3px 12px rgba(27,58,107,.09);
+  --shadow-md:   0 8px 28px rgba(27,58,107,.12);
+  --tr:          .22s ease;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--grey-800); background: var(--white); line-height: 1.65; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.section { padding: 88px 0; }
+.section--alt { background: var(--off-white); }
+
+.eyebrow {
+  display: inline-block;
+  font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--blue); background: var(--blue-pale);
+  padding: 5px 13px; border-radius: 50px; margin-bottom: 14px;
+  border: 1px solid var(--blue-light);
+}
+.h2 {
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  font-weight: 900; line-height: 1.18; color: var(--navy); margin-bottom: 14px;
+}
+.lead { font-size: 1.05rem; color: var(--grey-600); max-width: 580px; margin-bottom: 44px; line-height: 1.75; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 26px; border-radius: var(--r);
+  font-family: var(--font); font-size: .97rem; font-weight: 700;
+  cursor: pointer; border: none; transition: all var(--tr); white-space: nowrap;
+}
+.btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 4px 14px rgba(37,99,235,.28); }
+.btn-primary:hover { background: #1D4ED8; transform: translateY(-2px); box-shadow: 0 7px 20px rgba(37,99,235,.35); }
+.btn-outline { background: var(--white); color: var(--navy); border: 1.5px solid var(--navy-light); box-shadow: var(--shadow-xs); }
+.btn-outline:hover { border-color: var(--navy); background: var(--navy-pale); transform: translateY(-1px); }
+.btn-ghost { background: var(--navy-pale); color: var(--navy); border: 1.5px solid var(--navy-light); }
+.btn-ghost:hover { background: var(--navy-light); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(255,255,255,.96); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--grey-200);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between; height: 64px;
+}
+.nav-logo { display: flex; align-items: center; gap: 8px; font-size: 1.3rem; font-weight: 900; }
+/* Ronde SVG afbeelding als logo-icoon */
+.nav-logo-img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; display: block; }
+.nav-logo .klik { color: var(--navy); }
+.nav-logo .verder { color: var(--blue); }
+.nav-links { display: flex; gap: 26px; }
+.nav-links a {
+  color: var(--grey-600); font-size: .88rem; font-weight: 600;
+  padding: 4px 0; border-bottom: 2px solid transparent;
+  transition: color var(--tr), border-color var(--tr);
+}
+.nav-links a:hover { color: var(--navy); border-color: var(--blue); }
+.nav-cta {
+  background: var(--navy); color: var(--white);
+  padding: 9px 20px; border-radius: 8px; font-size: .88rem; font-weight: 700;
+  transition: background var(--tr), transform var(--tr);
+}
+.nav-cta:hover { background: var(--blue); transform: translateY(-1px); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+.mobile-menu {
+  display: none; position: fixed; top: 64px; left: 0; right: 0;
+  background: var(--white); border-bottom: 1px solid var(--grey-200);
+  padding: 20px 24px; flex-direction: column; z-index: 199; box-shadow: var(--shadow-md);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: var(--navy); font-size: 1rem; font-weight: 600; padding: 14px 0; border-bottom: 1px solid var(--grey-100); display: block; }
+.mobile-menu a:last-child { border-bottom: none; color: var(--blue); font-weight: 800; }
+
+/* HERO */
+#home {
+  padding-top: 64px; min-height: 85vh;
+  background: linear-gradient(160deg, var(--white) 0%, var(--navy-pale) 55%, var(--blue-pale) 100%);
+  display: flex; align-items: center; position: relative; overflow: hidden;
+}
+.hero-decor { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.hero-decor span {
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,99,235,.07) 0%, transparent 70%);
+}
+.hero-decor span:nth-child(1) { width: 700px; height: 700px; top: -200px; right: -200px; }
+.hero-decor span:nth-child(2) { width: 500px; height: 500px; bottom: -150px; left: -150px; }
+.hero-inner {
+  display: grid; grid-template-columns: minmax(0, 760px); justify-content: center; justify-items: center; max-width: 900px; margin: 0 auto;
+  gap: 32px; align-items: center; padding: 80px 0; position: relative; z-index: 1; text-align: center;
+}
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--white); border: 1px solid var(--grey-200); border-radius: 50px;
+  padding: 6px 14px; font-size: .78rem; font-weight: 700; color: var(--navy);
+  letter-spacing: .06em; text-transform: uppercase; margin-bottom: 22px; box-shadow: var(--shadow-xs);
+}
+.kicker-dot { width: 7px; height: 7px; background: #22C55E; border-radius: 50%; animation: pulse 2.2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.1;
+  color: var(--navy); margin-bottom: 22px; letter-spacing: -.02em;
+}
+.hero-title .accent { color: var(--blue); }
+.hero-sub { font-size: clamp(1rem, 1.6vw, 1.2rem); color: var(--grey-600); max-width: 600px; margin: 0 auto 38px; line-height: 1.7; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.hero-card {
+  background: var(--white); border: 1px solid var(--grey-200);
+  border-radius: 16px; padding: 36px; box-shadow: var(--shadow-md); position: relative;
+}
+.hero-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--navy), var(--blue)); border-radius: 16px 16px 0 0;
+}
+.hero-card-footer { display: flex; align-items: center; gap: 10px; font-size: .8rem; font-weight: 700; color: var(--navy); }
+.hero-card-footer .badge { width: 32px; height: 32px; border-radius: 8px; background: var(--navy-pale); display: flex; align-items: center; justify-content: center; font-size: .95rem; }
+
+/* STATS */
+#statistieken { background: var(--white); border-top: 1px solid var(--grey-100); border-bottom: 1px solid var(--grey-100); }
+.stats-top { text-align: center; margin-bottom: 44px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.stat-card {
+  background: var(--off-white); border: 1px solid var(--grey-200); border-radius: var(--r);
+  padding: 28px 22px; text-align: center; transition: all var(--tr); position: relative; overflow: hidden;
+}
+.stat-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--navy-light), var(--blue-light)); }
+.stat-card:hover { background: var(--white); box-shadow: var(--shadow-sm); transform: translateY(-3px); }
+.stat-num { font-size: clamp(1.6rem, 2.5vw, 2.1rem); font-weight: 900; color: var(--navy); line-height: 1; margin-bottom: 8px; }
+.stat-num span { color: var(--blue); }
+.stat-label { font-size: .83rem; color: var(--grey-600); font-weight: 600; line-height: 1.4; }
+
+/* PROBLEEM */
+.problem-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.problem-text p { font-size: 1rem; color: var(--grey-600); margin-bottom: 18px; line-height: 1.78; }
+.problem-text strong { color: var(--navy); font-weight: 800; }
+.time-accent { font-weight: 900; color: var(--navy); font-style: normal; text-decoration: underline; text-decoration-color: var(--blue); text-underline-offset: 3px; }
+.who-list { display: flex; flex-direction: column; gap: 8px; margin: 20px 0; }
+.who-item {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--navy-pale); border: 1px solid var(--navy-light);
+  border-radius: 8px; padding: 11px 16px; font-weight: 700; font-size: .93rem; color: var(--navy);
+  transition: all var(--tr);
+}
+.who-item:hover { background: var(--blue-pale); border-color: var(--blue-light); transform: translateX(4px); }
+.ai-warning {
+  background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 10px; padding: 16px 18px;
+  margin-top: 20px; display: flex; align-items: flex-start; gap: 12px;
+}
+.ai-warning .ico { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+.ai-warning p { font-size: .88rem; color: #92400E; line-height: 1.6; margin: 0; }
+.closing-line { font-size: .9rem; color: var(--grey-600); font-style: italic; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--grey-100); line-height: 1.7; }
+.problem-panel { background: var(--navy-pale); border: 1px solid var(--navy-light); border-radius: 16px; padding: 36px; position: sticky; top: 84px; }
+.panel-title { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 22px; }
+.method-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--navy-light); }
+.method-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.method-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--white); border: 1px solid var(--grey-200); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; box-shadow: var(--shadow-xs); }
+.method-title { font-size: .9rem; font-weight: 800; color: var(--navy); margin-bottom: 3px; }
+.method-desc { font-size: .8rem; color: var(--grey-600); line-height: 1.5; }
+
+/* OPLOSSING */
+.solution-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.solution-text p { font-size: 1rem; color: var(--grey-600); margin-bottom: 18px; line-height: 1.78; }
+.approach-block { background: var(--white); border: 1px solid var(--grey-200); border-left: 4px solid var(--navy); border-radius: 10px; padding: 18px 20px; margin-bottom: 18px; }
+.approach-block p { margin: 0; font-size: .92rem; color: var(--grey-600); line-height: 1.6; }
+.approach-block p strong { color: var(--navy); font-weight: 800; }
+.gdpr-notice { display: flex; align-items: center; gap: 12px; background: var(--blue-pale); border: 1px solid var(--blue-light); border-radius: 10px; padding: 14px 18px; margin-top: 8px; }
+.gdpr-notice .ico { font-size: 1.1rem; flex-shrink: 0; }
+.gdpr-notice p { font-size: .85rem; color: var(--navy); font-weight: 700; margin: 0; line-height: 1.5; }
+.strongest-accent { font-weight: 900; color: var(--navy); }
+.expect-title { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+.expect-list { display: flex; flex-direction: column; gap: 9px; }
+.expect-item { display: flex; align-items: center; gap: 12px; background: var(--white); border: 1px solid var(--grey-200); border-radius: 8px; padding: 12px 16px; font-size: .92rem; color: var(--grey-600); font-weight: 600; transition: all var(--tr); }
+.expect-item:hover { border-color: var(--blue-light); background: var(--blue-pale); }
+.expect-dot { width: 8px; height: 8px; background: var(--blue); border-radius: 50%; flex-shrink: 0; }
+
+/* PRICING */
+.pricing-intro { text-align: center; margin-bottom: 52px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; align-items: start; }
+.price-card { background: var(--white); border: 1.5px solid var(--grey-200); border-radius: 14px; padding: 28px 22px; display: flex; flex-direction: column; transition: all var(--tr); position: relative; }
+.price-card:hover { box-shadow: var(--shadow-md); border-color: var(--blue-light); transform: translateY(-4px); }
+.price-card--featured { border-color: var(--blue); background: var(--blue-pale); box-shadow: 0 0 0 2px rgba(37,99,235,.12), var(--shadow-sm); transform: translateY(-6px); }
+.price-card--featured:hover { transform: translateY(-10px); }
+.badge-feat { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--blue); color: var(--white); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 4px 14px; border-radius: 50px; white-space: nowrap; }
+.pc-tier  { font-size: .7rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+.pc-name  { font-size: 1.2rem; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
+.pc-price { font-size: 1.9rem; font-weight: 900; color: var(--navy); line-height: 1; margin-bottom: 4px; }
+.pc-price small { font-size: .82rem; font-weight: 600; color: var(--grey-400); }
+.pc-note  { font-size: .75rem; color: var(--grey-400); margin-bottom: 14px; }
+.pc-target { font-size: .8rem; color: var(--grey-600); font-style: italic; margin-bottom: 18px; padding: 14px 0; border-top: 1px solid var(--grey-100); line-height: 1.5; }
+.pc-features { flex: 1; display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.pc-feat { display: flex; align-items: flex-start; gap: 8px; font-size: .82rem; color: var(--grey-600); line-height: 1.4; }
+.pc-feat .ck { color: #22C55E; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+.pc-result { background: var(--navy-pale); border-left: 3px solid var(--navy); border-radius: 6px; padding: 9px 12px; font-size: .78rem; font-weight: 700; color: var(--navy); margin-bottom: 18px; line-height: 1.4; }
+.price-card--featured .pc-result { background: var(--white); }
+.pc-btn { display: block; text-align: center; padding: 11px; background: var(--navy-pale); color: var(--navy); border-radius: 8px; font-weight: 800; font-size: .88rem; font-family: var(--font); border: 1.5px solid var(--navy-light); cursor: pointer; transition: all var(--tr); }
+.pc-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.pc-btn--primary { background: var(--blue); color: var(--white); border-color: var(--blue); }
+.pc-btn--primary:hover { background: #1D4ED8; }
+
+/* Mobile pricing tab-balk */
+.mob-tier-tabs { display: none; }
+
+/* STAPPENPLAN */
+.steps-intro { text-align: center; margin-bottom: 52px; }
+.steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; position: relative; }
+.steps-grid::before { content: ''; position: absolute; top: 35px; left: calc(100%/6); right: calc(100%/6); height: 1.5px; background: linear-gradient(90deg, var(--navy-light), var(--blue-light)); }
+.step { text-align: center; }
+.step-num { width: 70px; height: 70px; border-radius: 50%; margin: 0 auto 20px; background: var(--white); border: 2px solid var(--grey-200); color: var(--navy); font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); position: relative; z-index: 1; }
+.step-title { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.step-desc  { font-size: .88rem; color: var(--grey-600); line-height: 1.6; }
+.steps-cta  { text-align: center; margin-top: 44px; }
+
+/* OVER */
+.over-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.founder-card { background: var(--off-white); border: 1px solid var(--grey-200); border-radius: 16px; padding: 36px; position: relative; overflow: hidden; }
+.founder-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--navy), var(--blue)); }
+.founder-name { font-size: 1.2rem; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+.founder-sub  { font-size: .85rem; color: var(--grey-400); margin-bottom: 20px; }
+.founder-quote { font-size: .95rem; color: var(--grey-600); font-style: italic; line-height: 1.75; border-left: 3px solid var(--blue-light); padding-left: 16px; }
+.mission-col .lead { margin-bottom: 28px; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.why-item { display: flex; align-items: center; gap: 10px; background: var(--navy-pale); border: 1px solid var(--navy-light); border-radius: 9px; padding: 14px; font-size: .88rem; font-weight: 700; color: var(--navy); transition: all var(--tr); }
+.why-item:hover { background: var(--blue-pale); border-color: var(--blue-light); }
+
+/* GETUIGENISSEN */
+.testi-intro { text-align: center; margin-bottom: 44px; }
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.testi-card {
+  background: var(--white); border: 1.5px solid var(--grey-200);
+  border-radius: 14px; padding: 32px 28px;
+  display: flex; flex-direction: column; gap: 14px;
+  box-shadow: var(--shadow-xs); transition: all var(--tr);
+}
+.testi-card:hover { box-shadow: var(--shadow-md); border-color: var(--blue-light); transform: translateY(-3px); }
+.testi-stars { color: #F59E0B; font-size: 1.15rem; letter-spacing: 2px; }
+.testi-text { font-size: .92rem; color: var(--grey-600); line-height: 1.72; font-style: italic; flex: 1; }
+.testi-author { font-size: .88rem; font-weight: 800; color: var(--navy); border-top: 1px solid var(--grey-100); padding-top: 14px; }
+
+/* FAQ */
+.faq-intro { text-align: center; margin-bottom: 28px; }
+.faq-list { max-width: 740px; margin: 0 auto 36px; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: var(--white); border: 1.5px solid var(--grey-200); border-radius: var(--r); overflow: hidden; transition: border-color var(--tr); }
+.faq-item.open { border-color: var(--blue-light); box-shadow: var(--shadow-xs); }
+.faq-q {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 18px 20px; background: none; border: none; cursor: pointer;
+  font-family: var(--font); font-size: .97rem; font-weight: 700; color: var(--navy);
+  text-align: left; transition: background var(--tr);
+}
+.faq-q:hover { background: var(--blue-pale); }
+.faq-item.open .faq-q { background: var(--blue-pale); }
+.faq-chevron {
+  flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+  background: var(--grey-100); display: flex; align-items: center; justify-content: center;
+  font-size: .7rem; color: var(--navy); transition: transform var(--tr), background var(--tr);
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); background: var(--blue-light); }
+.faq-a { display: none; padding: 4px 20px 20px; font-size: .93rem; color: var(--grey-600); line-height: 1.76; }
+.faq-item.open .faq-a { display: block; }
+.faq-cta-wrap { text-align: center; }
+.faq-note { font-size: .9rem; color: var(--grey-400); margin-bottom: 18px; }
+
+/* CONTACT */
+.contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 72px; align-items: start; }
+.contact-meta .lead { margin-bottom: 28px; }
+.contact-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; background: var(--white); border: 1px solid var(--grey-200); border-radius: 9px; margin-bottom: 10px; transition: all var(--tr); }
+.contact-item:hover { border-color: var(--navy-light); box-shadow: var(--shadow-xs); }
+.contact-item .ico { width: 40px; height: 40px; border-radius: 9px; background: var(--navy-pale); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.contact-item .txt { font-size: .95rem; font-weight: 700; color: var(--navy); }
+.contact-item .txt a { color: var(--navy); transition: color var(--tr); }
+.contact-item .txt a:hover { color: var(--blue); }
+.contact-btn-group { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+.contact-form-box { background: var(--white); border: 1px solid var(--grey-200); border-radius: 16px; padding: 32px; box-shadow: var(--shadow-sm); overflow: hidden; }
+.contact-form-box h3 { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
+.contact-form-box iframe { display: block; border-radius: 8px; }
+
+/* FOOTER */
+footer { background: var(--navy); color: rgba(255,255,255,.65); padding: 36px 0; text-align: center; font-size: .85rem; }
+.footer-logo { display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 1.1rem; font-weight: 900; margin-bottom: 10px; }
+.footer-logo .klik   { color: rgba(255,255,255,.9); }
+.footer-logo .verder { color: var(--blue-light); }
+footer a { color: rgba(255,255,255,.65); transition: color var(--tr); }
+footer a:hover { color: white; }
+.footer-copy { margin-top: 14px; font-size: .75rem; opacity: .45; }
+
+/* ANIMATIONS */
+.fi { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
+.fi.in { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .pricing-grid { grid-template-columns: repeat(2,1fr); }
+  .price-card--featured { transform: none; }
+  .price-card--featured:hover { transform: translateY(-4px); }
+}
+
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-sub { margin: 0 auto 38px; }
+  .hero-ctas { justify-content: center; }
+  .hero-card { display: none; }
+  .problem-layout, .solution-layout, .over-layout, .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+  .problem-panel { position: static; }
+  .steps-grid::before { display: none; }
+  .steps-grid { grid-template-columns: 1fr; gap: 28px; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* ── MOBIEL (≤580px) ── */
+@media (max-width: 580px) {
+  .section { padding: 60px 0; }
+  .why-grid { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas .btn { justify-content: center; }
+  .contact-btn-group { flex-direction: column; }
+
+  /* Statistieken: enkel €49M + €1K-10K+ zichtbaar */
+  .stat-card { display: none; }
+  .stat-card.stat-mobile { display: block; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Oplossing: verberg "Wat u mag verwachten" */
+  .expect-col { display: none; }
+
+  /* Stappenplan: getallen links, tekst rechts */
+  .steps-grid {
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .step {
+    text-align: left; display: flex; align-items: flex-start;
+    gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--grey-100);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num { width: 44px; height: 44px; font-size: 1.1rem; margin: 0; flex-shrink: 0; }
+  .step-body { flex: 1; }
+  .step-title { margin-bottom: 4px; }
+
+  /* Getuigenissen: enkel 1 */
+  .testi-card.testi-mob-hide { display: none; }
+
+  /* FAQ: verberg extra vragen op mobiel */
+  .faq-item.faq-mob-hide { display: none; }
+
+  /* Diensten & Prijzen: tab-systeem */
+  .mob-tier-tabs {
+    display: flex;
+    border: 1.5px solid var(--grey-200);
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;
+    margin-bottom: -2px;
+  }
+  .mob-tab {
+    flex: 1; padding: 11px 4px; font-size: .72rem; font-weight: 800;
+    text-align: center; background: var(--off-white); color: var(--grey-600);
+    border: none; cursor: pointer; font-family: var(--font);
+    border-right: 1px solid var(--grey-200);
+    transition: background var(--tr), color var(--tr);
+    line-height: 1.3;
+  }
+  .mob-tab:last-child { border-right: none; }
+  .mob-tab.active { background: var(--blue); color: var(--white); }
+  .pricing-grid { display: block; }
+  .price-card { display: none; border-radius: 0 0 14px 14px; }
+  .price-card.mob-active { display: flex; }
+  .price-card--featured { transform: none; box-shadow: var(--shadow-sm); padding-top: 44px; }
+  .badge-feat { top: 12px; }
+
+  /* Contact: verberg inline formulier */
+  .contact-form-col { display: none; }
+  .contact-layout { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media (max-width: 380px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
+
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="logo">Klik<span>Verder</span></div>
-  <ul>
-    <li><a href="#diensten">Diensten</a></li>
-    <li><a href="#hoe">Hoe het werkt</a></li>
-    <li><a href="#prijzen">Prijzen</a></li>
-    <li><a href="#contact" class="nav-cta">Boek nu</a></li>
-  </ul>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <img src="logo_rond.svg" alt="KlikVerder logo" class="nav-logo-img" />
+      <span class="klik">KLIK</span><span class="verder">VERDER</span>
+    </a>
+    <div class="nav-links">
+      <a href="#probleem">Probleem</a>
+      <a href="#oplossing">Oplossing</a>
+      <a href="#diensten">Diensten</a>
+      <a href="#over">Over ons</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <a href="#contact" class="nav-cta">Maak uw afspraak</a>
+    <button class="hamburger" id="ham" aria-label="Menu openen"><span></span><span></span><span></span></button>
+  </div>
 </nav>
+<div class="mobile-menu" id="mob">
+  <a href="#probleem"    onclick="closeMob()">Probleem</a>
+  <a href="#oplossing"   onclick="closeMob()">Oplossing</a>
+  <a href="#diensten"    onclick="closeMob()">Diensten &amp; Prijzen</a>
+  <a href="#stappenplan" onclick="closeMob()">Hoe werkt het</a>
+  <a href="#over"        onclick="closeMob()">Over ons</a>
+  <a href="faq.html"     onclick="closeMob()">FAQ</a>
+  <a href="#contact"     onclick="closeMob()">Maak uw afspraak →</a>
+</div>
 
-<section class="hero">
-  <div class="hero-badge">🔒 Digitale veiligheid voor senioren</div>
-  <h1>Nooit meer bang zijn voor<br><span>online oplichting</span></h1>
-  <p>KlikVerder komt bij u thuis, beveiligt uw accounts en zorgt dat u online rustig en veilig bent. Simpel. Betrouwbaar. Persoonlijk.</p>
-  <div class="hero-buttons">
-    <a href="#contact" class="btn-primary">📅 Boek een afspraak</a>
-    <a href="#prijzen" class="btn-secondary">Bekijk de pakketten</a>
-  </div>
-  <div class="hero-trust">
-    <div class="trust-item"><div class="trust-icon">🏡</div> Thuisbezoek</div>
-    <div class="trust-item"><div class="trust-icon">✅</div> Geen technische kennis nodig</div>
-    <div class="trust-item"><div class="trust-icon">📞</div> Nazorg inbegrepen</div>
-    <div class="trust-item"><div class="trust-icon">🤝</div> 100% vertrouwelijk</div>
-  </div>
-</section>
-
-<section class="why" id="diensten">
+<!-- HERO -->
+<section id="home">
+  <div class="hero-decor"><span></span><span></span></div>
   <div class="container">
-    <div class="section-label">Waarom dit belangrijk is</div>
-    <h2 class="section-title">Senioren zijn het vaakst<br>het doelwit van hackers</h2>
-    <p class="section-sub">Elke dag worden ouderen opgelicht via nepmailtjes, valse telefoontjes en gestolen wachtwoorden. Het hoeft niet zo te zijn.</p>
-    <div class="why-grid">
-      <div class="why-card"><div class="why-icon">🎣</div><h3>Phishing & oplichting</h3><p>Criminelen sturen nep-e-mails van "uw bank" of "de overheid" om uw gegevens te stelen. KlikVerder leert u hoe u dit herkent.</p></div>
-      <div class="why-card"><div class="why-icon">🔑</div><h3>Zwakke wachtwoorden</h3><p>Wachtwoorden zoals "123456" of uw geboortedatum zijn gevaarlijk. Wij helpen u met sterke, makkelijk te onthouden alternatieven.</p></div>
-      <div class="why-card"><div class="why-icon">📱</div><h3>Onbeveiligde accounts</h3><p>Facebook, WhatsApp, uw e-mail — al deze accounts kunnen worden gehackt als ze niet goed beveiligd zijn.</p></div>
-      <div class="why-card"><div class="why-icon">😰</div><h3>Stress en onzekerheid</h3><p>Veel senioren vermijden internet uit angst. Na onze afspraak weet u precies wat u doet en voelt u zich zeker.</p></div>
-      <div class="why-card"><div class="why-icon">👨‍👩‍👧</div><h3>Bezorgde kinderen</h3><p>Maakt u zich zorgen over uw ouders? Geef ze het cadeau van digitale rust. KlikVerder neemt de zorg van u over.</p></div>
-      <div class="why-card"><div class="why-icon">🏦</div><h3>Bankgegevens beschermen</h3><p>Online bankieren is handig, maar risicovol zonder de juiste beveiliging. Wij zorgen dat alles veilig staat.</p></div>
+    <div class="hero-inner">
+      <div class="fi">
+        <div class="hero-kicker"><span class="kicker-dot"></span> Cybersecurity aan huis · Vlaanderen</div>
+        <h1 class="hero-title">Met één afspraak<br/><span class="accent">beter beschermd</span><br/>tegen online oplichting</h1>
+        <p class="hero-sub">Online oplichters worden elke dag slimmer.<br/>KlikVerder helpt u stap-voor-stap om u beter te beschermen tegen phishing en fraude.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">📅 Maak uw afspraak</a>
+          <a href="tel:+32476548699" class="btn btn-outline">📞 Bel nu</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="how" id="hoe">
+<!-- STATISTIEKEN -->
+<section id="statistieken" class="section">
   <div class="container">
-    <div class="section-label">Hoe het werkt</div>
-    <h2 class="section-title">Eenvoudig in 4 stappen</h2>
-    <p class="section-sub">Geen ingewikkeld technisch gedoe. Gewoon een rustig gesprek bij u thuis.</p>
-    <div class="steps">
-      <div class="step"><div class="step-number">1</div><h3>U boekt een afspraak</h3><p>Kies een moment dat u past. KlikVerder komt naar u toe, waar u ook woont in de regio.</p></div>
-      <div class="step"><div class="step-number">2</div><h3>Wij komen bij u thuis</h3><p>Een persoonlijk gesprek, rustig en in uw eigen tempo. Geen haast, geen jargon.</p></div>
-      <div class="step"><div class="step-number">3</div><h3>Uw accounts worden beveiligd</h3><p>We herstructureren uw wachtwoorden, zetten extra beveiliging in en controleren alles.</p></div>
-      <div class="step"><div class="step-number">4</div><h3>U krijgt nazorg</h3><p>U ontvangt een overzichtsdocument en 30 dagen ondersteuning. Vragen? KlikVerder is er.</p></div>
+    <div class="stats-top fi">
+      <div class="eyebrow">Cijfers & Statistieken</div>
+      <h2 class="h2">Online fraude treft steeds meer mensen</h2>
+    </div>
+    <div class="stats-grid">
+      <!-- stat-mobile = altijd tonen op mobiel -->
+      <div class="stat-card stat-mobile fi">
+        <div class="stat-num">€<span>49M</span></div><div class="stat-label">Phishingschade België 2024</div>
+      </div>
+      <div class="stat-card fi" style="transition-delay:.06s">
+        <div class="stat-num"><span>2,3×</span></div><div class="stat-label">Schade verdubbeld in 2023</div>
+      </div>
+      <div class="stat-card fi" style="transition-delay:.12s">
+        <div class="stat-num"><span>75%</span></div><div class="stat-label">Transacties geblokkeerd, toch €49M buit</div>
+      </div>
+      <div class="stat-card fi" style="transition-delay:.18s">
+        <div class="stat-num"><span>3,4%</span></div><div class="stat-label">PRR – Phishing Respons Rate</div>
+      </div>
+      <div class="stat-card stat-mobile fi" style="transition-delay:.24s">
+        <div class="stat-num">€<span>1K – 10K+</span></div><div class="stat-label">Gemiddelde schade per incident</div>
+      </div>
+      <div class="stat-card fi" style="transition-delay:.3s">
+        <div class="stat-num"><span>10M</span></div><div class="stat-label">Verdachte meldingen bij Centre Cybersecurity Belgium</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="pricing" id="prijzen">
+<!-- PROBLEEM -->
+<section id="probleem" class="section section--alt">
   <div class="container">
-    <div class="section-label">Transparante prijzen</div>
-    <h2 class="section-title">Kies uw pakket</h2>
-    <p class="section-sub">Geen verborgen kosten. Eerlijke prijzen voor echte gemoedsrust.</p>
+    <div class="problem-layout">
+      <div class="problem-text fi">
+        <div class="eyebrow">Het probleem</div>
+        <h2 class="h2">Oplichters doen zich voor als mensen die u vertrouwt</h2>
+        <!-- "kwestie van tijd" benadrukt -->
+        <p>Online opgelicht worden is een <strong class="time-accent">kwestie van tijd</strong>. Oplichters beschikken via datalekken over uw gegevens en gebruiken die om u in de val te lokken.</p>
+        <p>Ze doen zich voor als:</p>
+        <ul class="who-list">
+          <li class="who-item">🏦 Uw bank</li>
+          <li class="who-item">🏛️ De overheid</li>
+          <li class="who-item">📦 Pakjesdiensten</li>
+          <li class="who-item">👨‍👩‍👧 Familie, Vrienden of Kenissen</li>
+        </ul>
+        <div class="ai-warning">
+          <span class="ico">⚠️</span>
+          <p>Met de opkomst van artificiële intelligentie kunnen online oplichters zelfs <strong>stemmen nabootsen</strong>.</p>
+        </div>
+        <p class="closing-line">Dit zijn geen toevallige pogingen, maar <strong>gerichte en slimme aanvallen</strong> die inspelen op vertrouwen en emotie.</p>
+      </div>
+      <div class="problem-panel fi" style="transition-delay:.15s">
+        <div class="panel-title">🎯 Hoe oplichters te werk gaan</div>
+        <div class="method-item">
+          <div class="method-icon">📧</div>
+          <div><div class="method-title">Phishing e-mails</div><div class="method-desc">Neppe e-mails die zich voordoen als uw bank of de overheid</div></div>
+        </div>
+        <div class="method-item">
+          <div class="method-icon">📱</div>
+          <div><div class="method-title">Valse sms-berichten</div><div class="method-desc">Over pakjes, betalingen of dringende meldingen</div></div>
+        </div>
+        <div class="method-item">
+          <div class="method-icon">📞</div>
+          <div><div class="method-title">Telefonische fraude</div><div class="method-desc">Iemand belt als bankmedewerker of IT-support</div></div>
+        </div>
+        <div class="method-item">
+          <div class="method-icon">🤖</div>
+          <div><div class="method-title">AI-stemnabootsing</div><div class="method-desc">Kunstmatige intelligentie bootst de stem van een familielid na</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPLOSSING -->
+<section id="oplossing" class="section">
+  <div class="container">
+    <div class="solution-layout">
+      <div class="fi">
+        <div class="eyebrow">De oplossing</div>
+        <h2 class="h2">Wat we samen doen</h2>
+        <!-- "sterkste beveiliging" benadrukt -->
+        <p>KlikVerder zit met u samen om uw online veiligheid drastisch te versterken. Onze formule biedt de <strong class="strongest-accent">sterkste beveiliging</strong> die particulieren kunnen hebben. Daarnaast leert u phishing herkennen en vermijden.</p>
+        <div class="approach-block">
+          <p><strong>Onze aanpak is eenvoudig:</strong><br/>Wij komen, beveiligen en vertrekken — zonder uw gegevens te bewaren.</p>
+        </div>
+        <div class="gdpr-notice">
+          <span class="ico">🔒</span>
+          <p>KlikVerder werkt volledig GDPR-conform. Uw wachtwoorden en gevoelige gegevens blijven altijd bij u.</p>
+        </div>
+      </div>
+      <!-- "Wat u mag verwachten": verborgen op ≤580px via .expect-col -->
+      <div class="fi expect-col" style="transition-delay:.15s">
+        <div class="expect-title">Wat u mag verwachten</div>
+        <div class="expect-list">
+          <div class="expect-item"><span class="expect-dot"></span>Begeleiding bij u thuis, op uw moment</div>
+          <div class="expect-item"><span class="expect-dot"></span>Uitleg in eenvoudige, duidelijke taal</div>
+          <div class="expect-item"><span class="expect-dot"></span>Werken op uw eigen toestellen</div>
+          <div class="expect-item"><span class="expect-dot"></span>Een overzicht via e-mail</div>
+          <div class="expect-item"><span class="expect-dot"></span>Mogelijkheid om achteraf vragen te stellen</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN & PRIJZEN -->
+<section id="diensten" class="section section--alt">
+  <div class="container">
+    <div class="pricing-intro fi">
+      <div class="eyebrow">Diensten &amp; Prijzen</div>
+      <h2 class="h2">Kies uw bescherming</h2>
+      <p class="lead" style="margin:0 auto">Alle prijzen zijn inclusief BTW.</p>
+    </div>
+
+    <!-- Tab-balk: enkel zichtbaar op mobiel (via CSS display:none / display:flex) -->
+    <div class="mob-tier-tabs" id="mobTabs">
+      <button class="mob-tab" onclick="showTier(0)">Essentieel</button>
+      <button class="mob-tab active" onclick="showTier(1)">Comfort</button>
+      <button class="mob-tab" onclick="showTier(2)">Gezin</button>
+      <button class="mob-tab" onclick="showTier(3)">VIP</button>
+    </div>
+
     <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-tier">Basis</div>
-        <div class="pricing-name">Digitale Start</div>
-        <div class="pricing-price">€89</div>
-        <div class="pricing-period">eenmalig · ±90 min thuisbezoek</div>
-        <ul class="pricing-features">
-          <li>Wachtwoorden herstructureren</li>
-          <li>2-factor authenticatie instellen</li>
-          <li>Uitleg over scams & phishing</li>
-          <li>Overzichtsdocument achterlaten</li>
-          <li>E-mailbeveiliging controleren</li>
+
+      <div class="price-card fi" id="pc0">
+        <div class="pc-tier">Tier 1</div>
+        <div class="pc-name">Essentieel</div>
+        <div class="pc-price">€125 <small>incl. BTW</small></div>
+        <div class="pc-note">Eenmalige sessie</div>
+        <div class="pc-target">Voor wie snel en eenvoudig beter beschermd wil zijn, zonder verdere opvolging.</div>
+        <ul class="pc-features">
+          <li class="pc-feat"><span class="ck">✓</span>Persoonlijke sessie aan huis (1u)</li>
+          <li class="pc-feat"><span class="ck">✓</span>Beveiliging van uw meest kwetsbare accounts</li>
+          <li class="pc-feat"><span class="ck">✓</span>Installatie van een eenvoudig wachtwoordsysteem</li>
+          <li class="pc-feat"><span class="ck">✓</span>Digitale veiligheidscheck</li>
+          <li class="pc-feat"><span class="ck">✓</span>Gids met tips tegen phishing</li>
         </ul>
-        <a href="#contact" class="btn-book">Boek dit pakket</a>
+        <div class="pc-result">Uw belangrijkste accounts zijn meteen beter beschermd</div>
+        <a href="#contact" class="pc-btn">Kies Essentieel</a>
       </div>
-      <div class="pricing-card popular">
-        <div class="popular-badge">⭐ Meest gekozen</div>
-        <div class="pricing-tier">Plus</div>
-        <div class="pricing-name">Digitaal Veilig</div>
-        <div class="pricing-price">€149</div>
-        <div class="pricing-period">eenmalig · ±2,5u thuisbezoek</div>
-        <ul class="pricing-features">
-          <li>Alles van het basispakket</li>
-          <li>Password manager installeren</li>
-          <li>Facebook & WhatsApp beveiligen</li>
-          <li>Bankieren online controleren</li>
-          <li>30 dagen WhatsApp nazorg</li>
-          <li>Persoonlijk veiligheidsplan</li>
+
+      <div class="price-card price-card--featured fi mob-active" id="pc1" style="transition-delay:.08s">
+        <div class="badge-feat">⭐ Meest gekozen</div>
+        <div class="pc-tier">Tier 2</div>
+        <div class="pc-name">Comfort</div>
+        <div class="pc-price">€175 <small>incl. BTW</small></div>
+        <div class="pc-note">Sessie + 30 dagen support</div>
+        <div class="pc-target">Voor wie zekerheid en begeleiding wil, ook na de afspraak.</div>
+        <ul class="pc-features">
+          <li class="pc-feat"><span class="ck">✓</span>Alles van Essentieel</li>
+          <li class="pc-feat"><span class="ck">✓</span>Langere sessie aan huis (2u)</li>
+          <li class="pc-feat"><span class="ck">✓</span>Uitgebreide beveiliging op al uw apparaten en accounts</li>
+          <li class="pc-feat"><span class="ck">✓</span>30 dagen telefonische hulp bij vragen of twijfels</li>
+          <li class="pc-feat"><span class="ck">✓</span>Persoonlijk overzichtsrapport</li>
         </ul>
-        <a href="#contact" class="btn-book">Boek dit pakket</a>
+        <div class="pc-result">U bent beschermd én u weet wat te doen bij twijfel</div>
+        <a href="#contact" class="pc-btn pc-btn--primary">Kies Comfort</a>
       </div>
-      <div class="pricing-card">
-        <div class="pricing-tier">Abonnement</div>
-        <div class="pricing-name">Altijd Beschermd</div>
-        <div class="pricing-price">€12</div>
-        <div class="pricing-period">per maand · jaarabonnement</div>
-        <ul class="pricing-features">
-          <li>Jaarlijkse volledige check-up</li>
-          <li>Updates bij nieuwe scams</li>
-          <li>Telefonische hulplijn</li>
-          <li>Prioriteit bij nieuwe afspraken</li>
-          <li>Nieuwsbrief over veiligheid</li>
+
+      <div class="price-card fi" id="pc2" style="transition-delay:.16s">
+        <div class="pc-tier">Tier 3</div>
+        <div class="pc-name">Gezin</div>
+        <div class="pc-price">€225 <small>incl. BTW</small></div>
+        <div class="pc-note">Voor 2 personen</div>
+        <div class="pc-target">Voor bescherming van meerdere personen.</div>
+        <ul class="pc-features">
+          <li class="pc-feat"><span class="ck">✓</span>Alles van Comfort</li>
+          <li class="pc-feat"><span class="ck">✓</span>Begeleiding voor 2 personen tegelijk</li>
+          <li class="pc-feat"><span class="ck">✓</span>60 dagen ondersteuning</li>
+          <li class="pc-feat"><span class="ck">✓</span>Jaarlijkse herinnering</li>
         </ul>
-        <a href="#contact" class="btn-book">Meer info</a>
+        <div class="pc-result">Iedereen in huis is beschermd</div>
+        <a href="#contact" class="pc-btn">Kies Gezin</a>
       </div>
-    </div>
-    <div class="group-cta">
-      <div class="group-cta-emoji">🎤</div>
-      <div class="group-cta-body">
-        <div class="group-cta-label">Voor verenigingen & gemeenten</div>
-        <h3>Groepsinfosessies</h3>
-        <p>Organiseer een interactieve infosessie voor uw seniorenclub, gemeente of vereniging. Praktisch, helder en op maat. Vanaf €15 per persoon (min. 20 deelnemers).</p>
+
+      <div class="price-card fi" id="pc3" style="transition-delay:.24s">
+        <div class="pc-tier">Tier 4</div>
+        <div class="pc-name">VIP Jaarabonnement</div>
+        <div class="pc-price">€360 <small>/jaar incl. BTW</small></div>
+        <div class="pc-note">Volledig jaar ontzorgd</div>
+        <div class="pc-target">Voor maximale gemoedsrust, het hele jaar.</div>
+        <ul class="pc-features">
+          <li class="pc-feat"><span class="ck">✓</span>Jaarlijkse sessie op Comfort-niveau</li>
+          <li class="pc-feat"><span class="ck">✓</span>Voorrang telefonische support 365 dagen</li>
+          <li class="pc-feat"><span class="ck">✓</span>Prioritaire inplanning binnen 48u</li>
+          <li class="pc-feat"><span class="ck">✓</span>Noodlijn bij phishing-incident</li>
+          <li class="pc-feat"><span class="ck">✓</span>Jaarverslag digitale veiligheid</li>
+        </ul>
+        <div class="pc-result">U staat er nooit alleen voor</div>
+        <a href="#contact" class="pc-btn">Kies VIP</a>
       </div>
-      <a href="#contact" class="btn-primary" style="flex-shrink:0;">Vraag een sessie aan</a>
+
     </div>
   </div>
 </section>
 
-<section class="testimonials">
+<!-- STAPPENPLAN -->
+<section id="stappenplan" class="section">
   <div class="container">
-    <div class="section-label">Wat klanten zeggen</div>
-    <h2 class="section-title">Echte ervaringen,<br>echte rust</h2>
-    <p class="section-sub">Families die KlikVerder vertrouwden met de digitale veiligheid van hun ouders.</p>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Mijn moeder was altijd bang om op een verkeerde link te klikken. Na het bezoek van KlikVerder is ze veel zelfzekerder. Ze belt me niet meer in paniek wanneer ze een e-mail krijgt."</p>
-        <div class="testimonial-author">Sofie V., 42 jaar</div>
-        <div class="testimonial-role">Dochter van een klant uit Gent</div>
+    <div class="steps-intro fi">
+      <div class="eyebrow">Stappenplan</div>
+      <h2 class="h2">Zo eenvoudig werkt het</h2>
+      <p class="lead" style="margin:0 auto">Van afspraak tot bescherming in drie eenvoudige stappen.</p>
+    </div>
+    <div class="steps-grid">
+      <!-- Elke stap krijgt een .step-body wrapper voor mobiel lijstlayout -->
+      <div class="step fi">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Afspraak maken</div>
+          <div class="step-desc">Kies uw pakket en een moment dat past.</div>
+        </div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Heel geduldig uitgelegd, nooit neerbuigend. Ik heb nu een document met al mijn wachtwoorden op een veilige manier, en ik begrijp zelf wat ik doe."</p>
-        <div class="testimonial-author">Marcel D., 74 jaar</div>
-        <div class="testimonial-role">Klant uit Brugge</div>
+      <div class="step fi" style="transition-delay:.12s">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Begeleiding aan huis</div>
+          <div class="step-desc">Samen beveiligen we stap-voor-stap uw toestellen.</div>
+        </div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"We hebben KlikVerder gevraagd voor een infosessie bij onze seniorenvereniging. Iedereen was enthousiast. Concreet, helder en niet te technisch."</p>
-        <div class="testimonial-author">Lieve M.</div>
-        <div class="testimonial-role">Voorzitter seniorenclub Aalst</div>
+      <div class="step fi" style="transition-delay:.24s">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">U bent beter beschermd</div>
+          <div class="step-desc">Zonder zorgen.</div>
+        </div>
       </div>
     </div>
+    <div class="steps-cta fi"><a href="#contact" class="btn btn-primary">Plan uw afspraak →</a></div>
   </div>
 </section>
 
-<section class="risks">
+<!-- OVER KLIKVERDER -->
+<section id="over" class="section section--alt">
   <div class="container">
-    <div class="section-label">Wij nemen het serieus</div>
-    <h2 class="section-title">Uw vertrouwen is onze<br>grootste verantwoordelijkheid</h2>
-    <p class="section-sub">KlikVerder werkt met kwetsbare mensen. Dat vereist de hoogste standaard van eerlijkheid en zorg.</p>
-    <div class="risks-grid">
-      <div class="risk-card"><div class="risk-icon">🤝</div><h4>Volledig transparant</h4><p>We leggen elke stap uit. U geeft nooit toegang zonder precies te begrijpen waarom en wat we doen.</p></div>
-      <div class="risk-card"><div class="risk-icon">🔐</div><h4>Privacy gegarandeerd</h4><p>Uw gegevens blijven van u. We slaan nooit wachtwoorden op en werken altijd in uw bijzijn.</p></div>
-      <div class="risk-card"><div class="risk-icon">📋</div><h4>Alles gedocumenteerd</h4><p>U ontvangt na elk bezoek een duidelijk overzicht van alles wat werd gedaan en gewijzigd.</p></div>
-      <div class="risk-card"><div class="risk-icon">📞</div><h4>Altijd bereikbaar</h4><p>Heeft u daarna vragen of twijfels? KlikVerder is er. U staat er nooit alleen voor na onze afspraak.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="section-label" style="text-align:center">Afspraak maken</div>
-    <h2 class="section-title" style="text-align:center">Boek uw gratis kennismaking</h2>
-    <p class="section-sub" style="text-align:center;margin-left:auto;margin-right:auto">Vul het formulier in en KlikVerder neemt binnen 24 uur contact op. Geen verplichtingen.</p>
-    <div class="contact-form">
-      <div class="form-group"><label>Uw naam</label><input type="text" placeholder="Jan Janssens"></div>
-      <div class="form-group"><label>Telefoon</label><input type="tel" placeholder="0472 00 00 00"></div>
-      <div class="form-group"><label>E-mailadres</label><input type="email" placeholder="jan@email.be"></div>
-      <div class="form-group">
-        <label>Welk pakket interesseert u?</label>
-        <select>
-          <option>Digitale Start – €89</option>
-          <option>Digitaal Veilig – €149 (meest gekozen)</option>
-          <option>Altijd Beschermd – €12/maand</option>
-          <option>Groepsinfosessie</option>
-          <option>Ik wil eerst meer info</option>
-        </select>
+    <div class="over-layout">
+      <div class="fi">
+        <div class="founder-card">
+          <!-- Ronde profielafbeelding/avatar verwijderd -->
+          <div class="founder-name">Victor Devos</div>
+          <div class="founder-sub">18 jaar · Student Digital Business Management</div>
+          <!-- Zin uitgebreid -->
+          <div class="founder-quote">"Mensen digitaal verder helpen is een passie van jongs af aan. Met KlikVerder is het onze missie dat iedereen online veilig kan zijn."</div>
+        </div>
       </div>
-      <div class="form-group"><label>Eventuele vragen of opmerkingen</label><textarea placeholder="Bijv: mijn moeder woont in Gent en is 72 jaar..."></textarea></div>
-      <button class="form-submit">✉️ Verstuur mijn aanvraag</button>
+      <div class="mission-col fi" style="transition-delay:.15s">
+        <div class="eyebrow">Over KlikVerder</div>
+        <h2 class="h2">Missie</h2>
+        <p class="lead">KlikVerder helpt particulieren zich beter te beschermen tegen online oplichting, met persoonlijke begeleiding.</p>
+        <h3 style="font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:14px;">Waarom kiezen voor KlikVerder?</h3>
+        <div class="why-grid">
+          <div class="why-item"><span>📍</span> Lokaal en vertrouwd</div>
+          <div class="why-item"><span>🤝</span> Persoonlijke begeleiding</div>
+          <div class="why-item"><span>🔒</span> Privacy volledig gerespecteerd</div>
+          <div class="why-item"><span>💬</span> Eenvoudige en duidelijke uitleg</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
-  <h2>Digitale rust begint met één klik</h2>
-  <p>Geef uzelf of uw ouders het cadeau van veiligheid. KlikVerder doet de rest.</p>
-  <a href="#contact" class="btn-primary">📅 Plan een afspraak</a>
+<!-- GETUIGENISSEN -->
+<section id="getuigenissen" class="section">
+  <div class="container">
+    <div class="testi-intro fi">
+      <div class="eyebrow">Getuigenissen</div>
+      <h2 class="h2">Wat klanten zeggen</h2>
+    </div>
+    <div class="testi-grid">
+
+      <!-- Kaart 1: altijd zichtbaar -->
+      <div class="testi-card fi">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Ik las in de krant over gehackte e-mails en dacht meteen: dat wil ik niet meemaken. Victor van KlikVerder kwam langs, legde alles rustig uit en zorgde dat alles veilig stond. Echt een zorg minder!"</p>
+        <div class="testi-author">Christine L. (73), Knokke</div>
+      </div>
+
+      <!-- Kaart 2+3: verborgen op mobiel -->
+      <div class="testi-card fi testi-mob-hide" style="transition-delay:.1s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Ik probeer altijd mee te zijn met de digitale wereld. KlikVerder voelde voor mij als een noodzakelijke stap: Victor heeft alles bij mij thuis goed beveiligd en uitgelegd. Ik surf nu veel veiliger en met vertrouwen."</p>
+        <div class="testi-author">Joost D. (76), Dentergem</div>
+      </div>
+
+      <div class="testi-card fi testi-mob-hide" style="transition-delay:.2s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Uit bezorgdheid gaf ik KlikVerder-Gezin cadeau aan mijn ouders. Victor was enorm klantvriendelijk en legde alles duidelijk uit. Mijn ouders zijn nu veel beter beschermd, en dat geeft mij enorme rust. Ik denk er zelf ook aan om zo’n service te nemen!"</p>
+        <div class="testi-author">Dieter H. (46), Gent</div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="section section--alt">
+  <div class="container">
+    <div class="faq-intro fi">
+      <div class="eyebrow">Veelgestelde vragen</div>
+      <h2 class="h2">Heeft u nog vragen?</h2>
+    </div>
+
+    <!-- Accordion -->
+    <div class="faq-list fi">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Wat doet KlikVerder precies?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">KlikVerder komt bij u thuis en helpt u uw online veiligheid sterk te verbeteren. We beveiligen uw accounts, installeren een wachtwoordsysteem, activeren twee-stapsverificatie en leren u phishing herkennen — op uw eigen toestellen en in uw eigen tempo.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is dit ook geschikt als ik niet zo digitaal ben?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">Absoluut. KlikVerder is specifiek opgericht voor mensen die minder vertrouwd zijn met technologie. Victor legt alles uit in begrijpelijke taal, werkt op uw eigen tempo en zorgt dat u nadien ook zelf weet wat u moet doen.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Worden mijn wachtwoorden of gegevens gedeeld?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">Nee, nooit. KlikVerder werkt volledig GDPR-conform. Uw wachtwoorden, persoonlijke gegevens en gevoelige informatie blijven altijd bij u. We bewaren niets na de sessie.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Hoelang duurt een sessie?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">Afhankelijk van het pakket duurt een sessie 1 tot 2 uur. Bij Essentieel rekenen we op 1 uur, bij Comfort en hoger op 2 uur. We nemen altijd de tijd die nodig is.</div>
+      </div>
+
+      <!-- Verborgen op mobiel -->
+      <div class="faq-item faq-mob-hide">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Kan ik KlikVerder schenken als cadeau?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">Ja, absoluut! Steeds meer mensen kiezen KlikVerder als cadeau voor (groot)ouders of andere familieleden. Neem contact op en we bespreken de mogelijkheden samen.</div>
+      </div>
+
+      <div class="faq-item faq-mob-hide">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Wat als ik achteraf nog vragen heb?
+          <span class="faq-chevron">▾</span>
+        </button>
+        <div class="faq-a">Bij Comfort heeft u 30 dagen telefonische ondersteuning, bij Gezin 60 dagen en bij VIP een volledig jaar. U kunt ons altijd bellen als u twijfelt aan een verdacht bericht.</div>
+      </div>
+
+    </div>
+
+    <div class="faq-cta-wrap fi">
+      <p class="faq-note">Bekijk alle veelgestelde vragen op onze uitgebreide overzichtspagina.</p>
+      <a href="faq.html" class="btn btn-primary">📋 Bekijk alle vragen &amp; antwoorden</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-meta fi">
+        <div class="eyebrow">Maak uw afspraak</div>
+        <h2 class="h2">Twijfelt u nog?</h2>
+        <p class="lead">Bel gerust – KlikVerder helpt u graag verder.</p>
+        <div class="contact-item">
+          <div class="ico">📞</div>
+          <div class="txt"><a href="tel:+32476548699">+32 476 54 86 99</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="ico">✉️</div>
+          <div class="txt"><a href="mailto:info@klikverder.be">info@klikverder.be</a></div>
+        </div>
+        <div class="contact-btn-group">
+          <a href="tel:+32476548699" class="btn btn-primary">📞 Bel nu</a>
+          <!-- Tekst gewijzigd: "Open het formulier" → "Laat u bellen door KlikVerder" -->
+          <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=9Ywju8lmBkaYUqnz4XgtY3wPloX7Kl1FiNTnv4DMar5UMDY1UjQ3SUcyS0pBTUxEN1hPRDA4OTJZSC4u" target="_blank" class="btn btn-outline">📞 Laat u bellen door KlikVerder</a>
+        </div>
+      </div>
+      <!-- Formulier kolom: verborgen op mobiel via .contact-form-col -->
+      <div class="fi contact-form-col" style="transition-delay:.15s">
+        <div class="contact-form-box">
+          <h3>📝 Maak uw afspraak of stel uw vraag</h3>
+          <iframe
+            width="100%" height="480px"
+            src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=9Ywju8lmBkaYUqnz4XgtY3wPloX7Kl1FiNTnv4DMar5UMDY1UjQ3SUcyS0pBTUxEN1hPRDA4OTJZSC4u&embed=true"
+            frameborder="0" marginwidth="0" marginheight="0"
+            style="border:none;max-width:100%;border-radius:8px;"
+            allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p><strong>KlikVerder</strong> · Uw lokale expert in online veiligheid voor senioren</p>
-  <p style="margin-top:8px">© 2025 KlikVerder · klikverder.be · Alle rechten voorbehouden</p>
+  <div class="container">
+    <div class="footer-logo"><span class="klik">KLIK</span><span class="verder">VERDER</span></div>
+    <p>Cybersecurity aan huis · Vlaanderen, België</p>
+    <p style="margin-top:6px"><a href="tel:+32476548699">+32 476 54 86 99</a> · <a href="mailto:info@klikverder.be">info@klikverder.be</a></p>
+    <p class="footer-copy">© 2025 KlikVerder · GDPR-conform · Alle rechten voorbehouden</p>
+  </div>
 </footer>
 
+<script>
+/* ── Hamburger ── */
+var ham = document.getElementById('ham');
+var mob = document.getElementById('mob');
+function closeMob() { mob.classList.remove('open'); }
+ham.addEventListener('click', function() { mob.classList.toggle('open'); });
+
+/* ── Scroll-animaties ── */
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fi').forEach(function(el) { observer.observe(el); });
+
+/* ── FAQ accordion ── */
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var answer = item.querySelector('.faq-a');
+  var isOpen = item.classList.toggle('open');
+  answer.style.display = isOpen ? 'block' : 'none';
+}
+
+/* ── Pricing tabs (mobiel) ── */
+var pcIds = ['pc0','pc1','pc2','pc3'];
+
+function showTier(index) {
+  pcIds.forEach(function(id, i) {
+    var card = document.getElementById(id);
+    var tab  = document.querySelectorAll('.mob-tab')[i];
+    if (i === index) {
+      card.classList.add('mob-active');
+      tab.classList.add('active');
+    } else {
+      card.classList.remove('mob-active');
+      tab.classList.remove('active');
+    }
+  });
+}
+
+/* Zorg dat tabs enkel zichtbaar zijn op mobiel.
+   CSS regelt display:none/flex — JS zorgt voor initialisatie. */
+function initMobTabs() {
+  if (window.innerWidth <= 580) {
+    showTier(1); /* Comfort standaard */
+  } else {
+    /* Op desktop: alle kaarten tonen, geen mob-active nodig */
+    pcIds.forEach(function(id) {
+      document.getElementById(id).classList.remove('mob-active');
+    });
+  }
+}
+initMobTabs();
+window.addEventListener('resize', initMobTabs);
+
+
+
+</script>
 </body>
 </html>
